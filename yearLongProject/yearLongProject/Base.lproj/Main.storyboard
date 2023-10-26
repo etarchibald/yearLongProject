@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1481.679389312977" y="-8.4507042253521139"/>
+            <point key="canvasLocation" x="987" y="-8"/>
         </scene>
         <!--Posts-->
         <scene sceneID="x4t-iP-xrR">
@@ -171,7 +171,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRj-fR-Ibl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269.4656488549617" y="-8.4507042253521139"/>
+            <point key="canvasLocation" x="2818" y="716"/>
+        </scene>
+        <!--Posts-->
+        <scene sceneID="bVV-R5-2Bg">
+            <objects>
+                <tableViewController id="fna-wi-eqV" customClass="PostsTableViewController" customModule="yearLongProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="YHS-Mf-DOK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="1" indentationWidth="10" reuseIdentifier="postIdentifier" rowHeight="175" id="lyJ-iz-Stw" customClass="PostsTableViewCell" customModule="yearLongProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="175"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lyJ-iz-Stw" id="5RG-u4-uJJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="175"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkv-BD-Cbj">
+                                            <rect key="frame" x="111.66666666666669" y="7" width="170" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="170" id="V4d-dA-bC6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocG-vE-SxG">
+                                            <rect key="frame" x="7" y="7.0000000000000018" width="115" height="22.666666666666671"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="115" id="y1X-RL-fua"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="14"/>
+                                            <color key="textColor" systemColor="systemBlueColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGe-yr-QVT">
+                                            <rect key="frame" x="7" y="47" width="379" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="58" id="aSA-Hs-3yS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djB-BO-YdM">
+                                            <rect key="frame" x="20" y="113" width="366" height="55"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="366" id="cZ2-Wa-47T"/>
+                                                <constraint firstAttribute="height" constant="55" id="vTi-H9-3gw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEl-KZ-fDr">
+                                            <rect key="frame" x="271" y="7.0000000000000018" width="115" height="22.666666666666671"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="115" id="RKu-fd-cPD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="14"/>
+                                            <color key="textColor" systemColor="systemBlueColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mEl-KZ-fDr" firstAttribute="top" secondItem="5RG-u4-uJJ" secondAttribute="top" constant="7" id="2Nd-7T-Esr"/>
+                                        <constraint firstAttribute="trailing" secondItem="mEl-KZ-fDr" secondAttribute="trailing" constant="7" id="4GI-Vw-kda"/>
+                                        <constraint firstItem="OGe-yr-QVT" firstAttribute="leading" secondItem="5RG-u4-uJJ" secondAttribute="leading" constant="7" id="65g-LW-gEx"/>
+                                        <constraint firstItem="OGe-yr-QVT" firstAttribute="top" secondItem="zkv-BD-Cbj" secondAttribute="bottom" constant="8" symbolic="YES" id="90W-ZL-WkF"/>
+                                        <constraint firstAttribute="trailing" secondItem="OGe-yr-QVT" secondAttribute="trailing" constant="7" id="9Rn-s7-UtU"/>
+                                        <constraint firstItem="OGe-yr-QVT" firstAttribute="top" secondItem="zkv-BD-Cbj" secondAttribute="bottom" constant="8" symbolic="YES" id="KvO-LD-Eml"/>
+                                        <constraint firstItem="djB-BO-YdM" firstAttribute="leading" secondItem="5RG-u4-uJJ" secondAttribute="leading" constant="20" id="LEn-1v-45V"/>
+                                        <constraint firstItem="djB-BO-YdM" firstAttribute="top" secondItem="OGe-yr-QVT" secondAttribute="bottom" constant="8" symbolic="YES" id="LY5-Hn-0yt"/>
+                                        <constraint firstAttribute="bottom" secondItem="djB-BO-YdM" secondAttribute="bottom" constant="7" id="NwH-Fm-9aB"/>
+                                        <constraint firstItem="zkv-BD-Cbj" firstAttribute="top" secondItem="5RG-u4-uJJ" secondAttribute="top" constant="7" id="Tun-yL-P4b"/>
+                                        <constraint firstItem="OGe-yr-QVT" firstAttribute="top" secondItem="ocG-vE-SxG" secondAttribute="bottom" constant="17.329999999999998" id="dbL-uk-B7p"/>
+                                        <constraint firstItem="ocG-vE-SxG" firstAttribute="top" secondItem="5RG-u4-uJJ" secondAttribute="top" constant="7" id="hl0-kL-R60"/>
+                                        <constraint firstItem="ocG-vE-SxG" firstAttribute="leading" secondItem="5RG-u4-uJJ" secondAttribute="leading" constant="7" id="qVH-bg-vfc"/>
+                                        <constraint firstItem="zkv-BD-Cbj" firstAttribute="centerX" secondItem="5RG-u4-uJJ" secondAttribute="centerX" id="qdi-Kd-x9J"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="BodyTextLabel" destination="OGe-yr-QVT" id="0qH-Ok-ab5"/>
+                                    <outlet property="commentLabel" destination="djB-BO-YdM" id="ybc-G3-W6m"/>
+                                    <outlet property="dateLabel" destination="mEl-KZ-fDr" id="KHO-8A-0ni"/>
+                                    <outlet property="titleLabel" destination="zkv-BD-Cbj" id="RPj-DJ-sjZ"/>
+                                    <outlet property="usernameLabel" destination="ocG-vE-SxG" id="LKl-8E-fdZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fna-wi-eqV" id="GEE-jw-wnI"/>
+                            <outlet property="delegate" destination="fna-wi-eqV" id="398-wt-a0Q"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Posts" image="square.and.pencil" catalog="system" id="qQQ-zX-Ynh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5a3-95-WVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913.740458015267" y="-8.4507042253521139"/>
         </scene>
         <!--Settings-->
         <scene sceneID="09T-9e-oYF">
@@ -207,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JIX-nV-eBD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3069.4656488549617" y="-8.4507042253521139"/>
+            <point key="canvasLocation" x="2818" y="-8"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="INK-XY-eOT">
@@ -221,7 +321,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tyM-pF-Kdn"/>
-                        <segue destination="3pV-Kb-l5c" kind="relationship" relationship="viewControllers" id="K43-S0-A8S"/>
+                        <segue destination="fna-wi-eqV" kind="relationship" relationship="viewControllers" id="SHs-E7-37j"/>
                         <segue destination="D6t-M3-ITt" kind="relationship" relationship="viewControllers" id="lAS-jx-AjG"/>
                     </connections>
                 </tabBarController>
@@ -243,6 +343,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

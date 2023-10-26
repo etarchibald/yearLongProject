@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A661CC12AEAC37A00381780 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A661CC02AEAC37A00381780 /* PostsTableViewController.swift */; };
+		4A661CC32AEAC3AA00381780 /* PostsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A661CC22AEAC3AA00381780 /* PostsInfo.swift */; };
+		4A661CC52AEAC3C300381780 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A661CC42AEAC3C300381780 /* PostsTableViewCell.swift */; };
 		4AB4AFC72AC477400097A387 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4AFC62AC477400097A387 /* AppDelegate.swift */; };
 		4AB4AFC92AC477400097A387 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4AFC82AC477400097A387 /* SceneDelegate.swift */; };
 		4AB4AFCB2AC477400097A387 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4AFCA2AC477400097A387 /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A661CC02AEAC37A00381780 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		4A661CC22AEAC3AA00381780 /* PostsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInfo.swift; sourceTree = "<group>"; };
+		4A661CC42AEAC3C300381780 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		4AB4AFC32AC477400097A387 /* yearLongProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yearLongProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB4AFC62AC477400097A387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AB4AFC82AC477400097A387 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,9 @@
 				4AB4AFC82AC477400097A387 /* SceneDelegate.swift */,
 				4AB4AFCA2AC477400097A387 /* ViewController.swift */,
 				4AB4AFCC2AC477400097A387 /* Main.storyboard */,
+				4A661CC22AEAC3AA00381780 /* PostsInfo.swift */,
+				4A661CC42AEAC3C300381780 /* PostsTableViewCell.swift */,
+				4A661CC02AEAC37A00381780 /* PostsTableViewController.swift */,
 				4AB4AFDA2AC4A71C0097A387 /* SettingsViewController.swift */,
 				4AB4AFDC2AC4A99C0097A387 /* PostsViewController.swift */,
 				4AB4AFCF2AC477410097A387 /* Assets.xcassets */,
@@ -145,10 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB4AFCB2AC477400097A387 /* ViewController.swift in Sources */,
+				4A661CC12AEAC37A00381780 /* PostsTableViewController.swift in Sources */,
 				4AB4AFC72AC477400097A387 /* AppDelegate.swift in Sources */,
+				4A661CC32AEAC3AA00381780 /* PostsInfo.swift in Sources */,
 				4AB4AFC92AC477400097A387 /* SceneDelegate.swift in Sources */,
 				4AB4AFDB2AC4A71C0097A387 /* SettingsViewController.swift in Sources */,
 				4AB4AFDD2AC4A99C0097A387 /* PostsViewController.swift in Sources */,
+				4A661CC52AEAC3C300381780 /* PostsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
