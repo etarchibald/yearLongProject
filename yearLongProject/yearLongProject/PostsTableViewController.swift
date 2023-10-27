@@ -60,7 +60,6 @@ class PostsTableViewController: UITableViewController {
          cell.titleLabel.text = post.title
          cell.BodyTextLabel.text = post.bodyText
          cell.commentLabel.text = "\"\(post.comments)\""
-         let dateFormatter = DateFormatter()
          cell.dateLabel.text = post.date.formatted(date: .abbreviated, time: .omitted)
          cell.usernameLabel.text = post.user
      
