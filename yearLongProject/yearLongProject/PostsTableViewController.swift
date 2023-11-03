@@ -22,97 +22,59 @@ class PostsTableViewController: UITableViewController {
         PostInfo(title: "Last Post", bodyText: "Last one best one", date: Date(), user: "Quote", comments: "Never got the point of that one")
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        if ViewController.isItGettingDarkOut == true {
-    //            mainView.overrideUserInterfaceStyle = .dark
-    //        } else {
-    //            mainView.overrideUserInterfaceStyle = .light
-    //        }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return arrayOfPosts.count
     }
     
     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "postIdentifier", for: indexPath) as! PostsTableViewCell
-         
-         let post = arrayOfPosts[indexPath.row]
-         
-         cell.titleLabel.text = post.title
-         cell.BodyTextLabel.text = post.bodyText
-         cell.commentLabel.text = "\"\(post.comments)\""
-         cell.dateLabel.text = post.date.formatted(date: .abbreviated, time: .omitted)
-         cell.usernameLabel.text = post.user
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postIdentifier", for: indexPath) as! PostsTableViewCell
+        
+        let post = arrayOfPosts[indexPath.row]
+        
+        
+        
+        cell.BodyTextLabel.layer.borderColor = UIColor.gray.cgColor
+        cell.BodyTextLabel.layer.borderWidth = 2.0
+        
+        
+        cell.titleLabel.text = post.title
+        cell.BodyTextLabel.text = post.bodyText
+        cell.commentLabel.text = "\"\(post.comments)\""
+        cell.dateLabel.text = post.date.formatted(date: .abbreviated, time: .omitted)
+        cell.usernameLabel.text = post.user
+        
+        
+        return cell
+    }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tvc = segue.destination as? addEditPostTableViewController else { return }
+        
+        tvc.delegate = self
+    }
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
+    @IBSegueAction func addPost(_ coder: NSCoder, sender: Any?) -> addEditPostTableViewController? {
+        return addEditPostTableViewController(coder: coder, post: nil)
+    }
     
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
+    @IBSegueAction func editPost(_ coder: NSCoder, sender: Any?) -> addEditPostTableViewController? {
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else { return nil }
+        
+        let post = arrayOfPosts[indexPath.row]
+        
+        return addEditPostTableViewController(coder: coder, post: post)
+    }
     
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
+}
+
+extension PostsTableViewController: AddPostDelegate {
+    func newPost(userName: String, date: Date, title: String, body: String, comment: String) {
+        if let selected = tableView.indexPathForSelectedRow {
+            arrayOfPosts[selected.row] = PostInfo(title: title, bodyText: body, date: date, user: userName, comments: comment)
+        } else {
+            arrayOfPosts.insert(PostInfo(title: userName, bodyText: body, date: date, user: userName, comments: comment), at: arrayOfPosts.startIndex)
+        }
+        tableView.reloadData()
+    }
 }
